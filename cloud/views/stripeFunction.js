@@ -20,6 +20,8 @@ AV.Cloud.define("stripeCharge", function(request, response) {
   		if (err && err.type === 'StripeCardError') {
     		response.error("declined");
   		}
+  		response.success(charge);
+
 
 	});
 
