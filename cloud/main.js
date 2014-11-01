@@ -7,7 +7,7 @@ var stripe = require("stripe")( "sk_test_sr52IMYk7RCWAEIhZhmQh21L" );
 
 AV.Cloud.define("stripeCharge", function(request, response) {
 
-  	var stripeToken = request.object.get("stripeToken");
+  	var stripeToken = request.params.stripeToken;
 
 	var charge = stripe.charges.create({
  		amount: 1000, // amount in cents, again
